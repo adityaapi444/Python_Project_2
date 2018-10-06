@@ -22,7 +22,6 @@ class game:
             self.__init__()
         else:
             self.player2=random.choice(list(self.choices.keys()))
-            print(self.player2)
             self.rps(self.player1,self.player2)
             
 #define func to check the winner
