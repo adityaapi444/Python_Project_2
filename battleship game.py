@@ -1,6 +1,7 @@
 #import packages
 
 import random
+import time
 
 #class  battleship created
 
@@ -101,7 +102,8 @@ class battleship:
             while d.lower() not in('y','n'):
                 d=input("Do you want to play again(y/n)")
             if d.lower()=='n':
-                    print('Thanks for playing')
+                    print('\nThanks for playing.!!!!!Be Happy!!!')
+                    time.sleep(2)
                     break
             self.__init__()
             break
