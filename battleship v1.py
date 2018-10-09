@@ -1,4 +1,3 @@
-
 #import packages
 
 import random
@@ -6,7 +5,9 @@ import random
 #class  battleship created
 
 class battleship:
-#defne function to make a board
+    
+#define function to make a board
+    
     def __init__(self):
         print('**************************************')
         c=0
@@ -28,9 +29,11 @@ class battleship:
         
     def show_grid(self,n):
         c=0
-        p=input('want to check ship location(y/n)')
+        p=input('Want to check ship location(y/n)')
         print('**************************************')
-        if p.lower()in 'y':
+        if p.lower()!='y':
+            SystemExit()
+        else:
             print('\n|-----|-------|-------|-------|------|')
             for each in self.d:
                 if each!=n:
@@ -41,9 +44,9 @@ class battleship:
                     c+=1
                 if c%5==0:
                     print('\n|-----|-------|-------|-------|------|')
-                    c=0           
-        else:
-            SystemExit()
+                    c=0
+        self.play_again()
+
 #define function to assign random location for ship
         
     def ship_placed(self):
@@ -89,7 +92,7 @@ class battleship:
                     g_count-=1
         print('**************************************')
          
-#define func for next round
+#define function for next round
         
     def play_again(self):
         while (True):
@@ -101,15 +104,17 @@ class battleship:
                     print('Thanks for playing')
                     break
             self.__init__()
+            break
 
 #introduction block
+        
 print('**************************************')
 print('             Battleship')
 print('**************************************\n')
-print('In battleship,You have to sink a ship\nwhich is hidden in one of the location\non board given below.\n\nThere are 25 locations.\nYou have 4 chances to guess\nthat location ')
+print('In Battleship,You have to sink a ship\nwhich is hidden in one of the location\non board given below.\n\nThere are 25 locations.\nYou have 4 chances to guess\nthat location ')
 
 
 #here the game begin
+
 b=battleship()
-b.play_again()
     
