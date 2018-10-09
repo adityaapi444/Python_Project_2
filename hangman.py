@@ -33,8 +33,9 @@ class hangman:                                                                  
         
     def play_again(self):                                                                                           #define func. for next round
         while (True):
-            print('********************************************************************')
+            print('********************************************************************************')
             d=input("Do you want to play again(y/n)")
+            print()
             while d.lower() not in('y','n'):
                 d=input("Do you want to play again(y/n)")
             if d.lower()=='n':
