@@ -1,2 +1,8 @@
 # Project_2
-1.Rock Paper Scissor game 2.Battleship 3.Hangman
+#Recommending you to run this up on command prompt or terminal
+
+1.Rock Paper Scissor
+2.Battleship
+3.Hangman
+
+
