@@ -14,7 +14,7 @@ class hangman:                                                                  
         self.set_word_letter=set(self.split_word)
         self.user_word=list()                                                                                       #list created for user_input
         self.set_user_input=set()                                                                                   #set created for guessed letter
-        self.hint_c=round(len(self.split_word)*0.25)                                                                #round() used to get appropriate hints
+        self.hint_c=round(len(self.split_word)*0.25)                                                                #no.of hints calculated based on len of word
         print('\t\t\t  ',end='')
         
         for each in self.split_word:
@@ -43,6 +43,7 @@ class hangman:                                                                  
                     time.sleep(2)
                     break
             self.__init__()
+            break
             
             
     def mistakes_count(self):                                                                                       #define func. to count mistakes
