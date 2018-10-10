@@ -27,9 +27,13 @@ class hangman:                                                                  
         if self.hint_c==0:
             print('\nHints are over')
         while(self.hint_c>0):
-            self.m=random.choice(list(self.set_word_letter-self.set_user_input))                                    #hint given to user 
-            self.hint_c-=1                                                                                          #hint decreased to 1
-            break;
+            if len(self.set_word_letter-self.set_user_input)==1:
+                print("\nNow, You can't use hint ")                                                                 #hint revoked when only 1 word remain
+                break
+            else:
+                self.m=random.choice(list(self.set_word_letter-self.set_user_input))                                #hint given to user 
+                self.hint_c-=1                                                                                      #hint decreased to 1
+                break;
         
     def play_again(self):                                                                                           #define func. for next round
         while (True):
@@ -51,6 +55,7 @@ class hangman:                                                                  
             self.w_count+=1                                                                                         #mistakes count increased to 1
         elif self.m in self.prev_guess:
             self.w_count+=1                                                                                         #mistakes count increased to 1
+        return self.w_count
 
             
     def guess_a_letter(self):                                                                                       #definr func. to guess letter
@@ -90,8 +95,7 @@ class hangman:                                                                  
                 print('\n\nCongrats!!!!\nYou have survived!!!!')                                                    #checking user_word with the original 
                 break
             
-            self.mistakes_count()
-            print('\n\n                                                                 mistake(s):',self.w_count)  #to display no. of mistakes
+            print('\n\n                                                                 mistake(s):',self.mistakes_count())  #to display no. of mistakes
             
             self.prev_guess.add(self.m)
             print('\nPrev Guess : ',self.prev_guess)
@@ -99,7 +103,7 @@ class hangman:                                                                  
                 print('________________________________________________________________________________')
                 print('\nYou got hanged')
                 print('   _________')
-                print('  | /  |   ')   
+                print('  | /  |   ')
                 print('  |/   o  ')    
                 print('  |   /|\ ')
                 print('  |    |')     
